@@ -1,0 +1,34 @@
+/* Áp dụng cho tất cả các phần tử, loại bỏ khoảng cách mặc định của trình duyệt */
+* {
+	margin: 0%; /* Khoảng cách ngoài: Đặt về 0% để không có khoảng cách ngoài */
+	padding: 0%; /* Khoảng cách trong: Đặt về 0% để không có khoảng cách trong */
+}
+
+/* Áp dụng cho tất cả các ảnh có class 'hinh' */
+img.hinh {
+    width: 100%; /* Chiều rộng: Đặt chiều rộng của ảnh bằng 100% của phần tử cha */
+    transition: 0.5s ease; /* Hiệu ứng chuyển đổi: Thời gian chuyển đổi là 0.5 giây, với hiệu ứng 'ease' */
+}
+
+/* Áp dụng cho tất cả các phần tử có class 'khung_hinh' */
+.khung_hinh {
+    width: 48%; /* Chiều rộng: Đặt chiều rộng bằng 48% của phần tử cha */
+    height: 350px; /* Chiều cao: Đặt chiều cao cố định là 350px */
+    border: 1px solid black; /* Viền: Đặt viền màu đen, độ dày 1px và kiểu đường viền là solid */
+    margin-right: 1%; /* Khoảng cách ngoài bên phải: Đặt là 1% */
+    margin-left: 1%; /* Khoảng cách ngoài bên trái: Đặt là 1% */
+    overflow: hidden; /* Quản lý nội dung tràn: Ẩn nội dung tràn ra khỏi phần tử */
+}
+
+/* Áp dụng khi di chuột vào phần tử có class 'khung_hinh' */
+.khung_hinh:hover .hinh {
+    transform: scale(1.2); /* Biến đổi: Phóng to ảnh lên 1.2 lần kích thước ban đầu */
+}
+
+/* Áp dụng cho tất cả các phần tử có class 'container' */
+.container {
+    width: 100%; /* Chiều rộng: Đặt chiều rộng bằng 100% của phần tử cha */
+    height: auto; /* Chiều cao: Đặt chiều cao tự động dựa trên nội dung bên trong */
+    display: flex; /* Hiển thị: Sử dụng mô hình bố cục linh hoạt 'flex' */
+    justify-content: center; /* Căn chỉnh nội dung: Căn giữa nội dung theo chiều ngang */
+}
