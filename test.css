@@ -1,43 +1,78 @@
+/* Áp dụng cho tất cả các phần tử */
 * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+  margin: 0%; /* Loại bỏ lề mặc định */
+  padding: 0%; /* Loại bỏ đệm mặc định */
+  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
 }
 
-.container-icons.right {
-    right: 0;
-    top: 50%;
-    position: absolute;
-    background: white;
-    border-radius: 50px;
-    padding: 1%;
+/* Áp dụng cho thẻ body */
+body {
+  width: 100%; /* Chiều rộng bằng 100% của viewport */
+  height: 100vh; /* Chiều cao bằng 100% của viewport */
+  background: #8c52ff; /* Màu nền tím */
 }
 
-.container-icons.left {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    background: white;
-    border-radius: 50px;
-    padding: 1%;
+/* Áp dụng cho thẻ form */
+form {
+  position: relative; /* Định vị tương đối so với vị trí ban đầu */
+  top: 50%; /* Đặt ở giữa theo chiều dọc */
+  left: 50%; /* Đặt ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Dịch chuyển form để nó nằm chính giữa */
+  transition: all 1s; /* Hiệu ứng chuyển đổi mượt mà cho tất cả các thuộc tính */
+  width: 50px; /* Chiều rộng ban đầu của form */
+  height: 50px; /* Chiều cao ban đầu của form */
+  background: white; /* Màu nền trắng */
+  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
+  border-radius: 25px; /* Bo tròn các góc */
+  border: 4px solid white; /* Viền trắng rộng 4px */
+  padding: 5px; /* Đệm bên trong form */
 }
 
-img.image {
-    width: 25%;
-    height: 100%;
-    border-radius: 10px;
+/* Áp dụng cho thẻ input bên trong form */
+input {
+  position: absolute; /* Định vị tuyệt đối so với thẻ form */
+  top: 0; /* Đặt ở đầu trên cùng của form */
+  left: 0; /* Đặt ở góc trái cùng của form */
+  width: 100%; /* Chiều rộng bằng với form */
+  height: 42.5px; /* Chiều cao cố định */
+  line-height: 30px; /* Chiều cao dòng cho văn bản */
+  outline: 0; /* Loại bỏ đường viền khi focus */
+  border: 0; /* Loại bỏ viền */
+  display: none; /* Ẩn input khi không hover */
+  font-size: 1em; /* Cỡ chữ chuẩn */
+  border-radius: 20px; /* Bo tròn các góc của input */
+  padding: 0 20px; /* Đệm bên trong input */
 }
 
-.container {
-    width: 100%;
-    position: relative;
+/* Áp dụng cho icon kính lúp */
+.fa-magnifying-glass {
+  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
+  padding: 10px; /* Đệm xung quanh icon */
+  width: 42.5px; /* Chiều rộng cố định của icon */
+  height: 42.5px; /* Chiều cao cố định của icon */
+  position: absolute; /* Định vị tuyệt đối so với thẻ form */
+  top: 0; /* Đặt ở đầu trên cùng của form */
+  right: 0; /* Đặt ở góc phải cùng của form */
+  border-radius: 50%; /* Làm tròn icon */
+  color: #8c52ff; /* Màu sắc của icon */
+  text-align: center; /* Căn giữa nội dung của icon */
+  font-size: 1.2em; /* Cỡ chữ lớn hơn cho icon */
+  transition: all 1s; /* Hiệu ứng chuyển đổi mượt mà cho icon */
 }
-.card {
-    width: 100%;
-    border: 1px solid red;
-    height: 200px;
-    display: flex;
-    gap: 10px;
-    overflow: scroll;
-    position: relative;
+
+/* Khi hover vào form */
+form:hover {
+  width: 300px; /* Tăng chiều rộng của form */
+  cursor: pointer; /* Con trỏ chuột thay đổi thành hình bàn tay */
+}
+
+/* Khi hover vào form, hiển thị input */
+form:hover input {
+  display: block; /* Hiển thị input */
+}
+
+/* Khi hover vào form, thay đổi màu sắc của icon */
+form:hover .fa-magnifying-glass {
+  background: #8c52ff; /* Màu nền của icon */
+  color: white; /* Màu sắc của icon */
 }
