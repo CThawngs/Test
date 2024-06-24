@@ -380,7 +380,7 @@ ul.menu_cap_2 {
   }
   
   .list.active .icon {
-    transform: translateY(-32px);
+    transform: translateY(-50%);
   }
   
   .link {
