@@ -380,7 +380,7 @@ ul.menu_cap_2 {
   }
   
   .list.active .icon {
-    transform: translateY(-32px);
+    transform: translateY(-30px); /*hoặc -30%*/
   }
   
   .link {
@@ -423,13 +423,13 @@ ul.menu_cap_2 {
   .indicator {
     position: absolute;
     top: -30%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: #29fd53;
     border-radius: 50%;
     border: 6px solid #222327;
     transition: 0.5s;
-    left: 10px;
+    left: 5px;
   }
   
   .indicator::before {
