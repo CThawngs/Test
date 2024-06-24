@@ -398,7 +398,7 @@ ul.menu_cap_2 {
     position: relative;
     display: block;
     line-height: 75px;
-    font-size: 1.5em;
+    font-size: 120%;
     text-align: center;
     transition: 0.5s;
     color: #222327;
@@ -460,7 +460,7 @@ ul.menu_cap_2 {
     display: block !important;;
     font-size: 100%;
     transition: transform 0.75s ease;
-    margin-top: 35%;
+    margin-top: 40%;
   }
   
   #plus {
@@ -489,7 +489,7 @@ ul.menu_cap_2 {
     width: 300%;
     height: 40px;
     visibility: visible;
-    transform: translateY(-300%);
+    transform: translateY(-275%);
     left: -100%;
     opacity: 1;
   }
