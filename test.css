@@ -1,78 +1,546 @@
-/* Áp dụng cho tất cả các phần tử */
 * {
-  margin: 0%; /* Loại bỏ lề mặc định */
-  padding: 0%; /* Loại bỏ đệm mặc định */
-  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-/* Áp dụng cho thẻ body */
 body {
-  width: 100%; /* Chiều rộng bằng 100% của viewport */
-  height: 100vh; /* Chiều cao bằng 100% của viewport */
-  background: #8c52ff; /* Màu nền tím */
+  background-color: #222327;
+  font-family: sans-serif;
 }
 
-/* Áp dụng cho thẻ form */
+/* Đối với các biểu tượng bên phải: */
+.container-icons.right {
+  right: 0; /* Đặt biểu tượng sát bên phải */
+  top: 50%; /* Đặt biểu tượng ở giữa theo chiều dọc */
+  position: absolute; /* Vị trí tuyệt đối so với phần tử cha gần nhất có vị trí không phải là static */
+  background: #a1a1a196; /* Màu nền đỏ */
+  border-radius: 50px; /* Bo tròn viền */
+  padding: 1%; /* Đệm xung quanh nội dung */
+  margin-right: 1.5%; /* Lề bên phải */
+  cursor: pointer;
+}
+
+/* Đối với các biểu tượng bên trái: */
+.container-icons.left {
+  position: absolute; /* Vị trí tuyệt đối so với phần tử cha */
+  left: 0; /* Đặt biểu tượng sát bên trái */
+  top: 50%; /* Đặt biểu tượng ở giữa theo chiều dọc */
+  background: #a1a1a196; /* Màu nền đỏ */
+  border-radius: 50px; /* Bo tròn viền */
+  padding: 1%; /* Đệm xung quanh nội dung */
+  cursor: pointer;
+}
+
+.slide {
+  width: 100%; /* Chiều rộng tối đa */
+  height: 100%; /* Chiều cao tối đa */
+  border-radius: 10px; /* Bo tròn góc của hình ảnh */
+  scroll-snap-align: /*start*/ center /*end*/; /* Căn giữa hình ảnh khi cuộn */
+  cursor: pointer;
+}
+
+.carousel {
+  width: 100%; /* Chiều rộng tối đa */
+  position: relative; /* Vị trí tương đối so với vị trí ban đầu */
+  margin-top: 1%;
+}
+
+/* Đối với card chứa hình ảnh: */
+.card {
+  width: 100%; /* Chiều rộng tối đa */
+  height: 80vh; /* Chiều cao cố định là 500px */
+  display: flex; /* Hiển thị linh hoạt */
+  gap: 15px; /* Khoảng cách giữa các phần tử con */
+  overflow: scroll; /* Cho phép cuộn nếu nội dung vượt quá kích thước */
+  position: relative; /* Vị trí tương đối so với vị trí ban đầu */
+  scroll-snap-type: x mandatory; /* Yêu cầu cuộn nắm bắt theo chiều ngang */
+}
+
+span.style_khuyen_mai {
+  color: blue;
+  cursor: pointer;
+}
+
+span.style_khuyen_mai:hover {
+  color: #2424ff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+p.text_khuyen_mai {
+  text-align: center;
+  background-color: gray;
+  padding: 0.5%;
+  color: white;
+  font-size: 80%;
+  letter-spacing: 1.5px;
+}
+
+.khuyen_mai {
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+  background-color: #adadad;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+}
+
+i.fa-regular.fa-user {
+  color: rgb(140, 82, 255);
+  font-size: 19px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 25px;
+  background: white;
+  margin-left: 10%;
+  width: 40px;
+  transition: all 1s ease 0s;
+  cursor: pointer;
+}
+
+i.fa-regular.fa-user:hover {
+  color: white;
+  background-color: rgb(140, 82, 255);
+  border: 1px solid white;
+}
+
+i.fa-solid.fa-plus {
+  display: none;
+}
+
+.menu_animation {
+  position: absolute;
+  top: 0px;
+  left: 0.25%;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(45deg, rgb(79, 25, 25), rgb(255, 51, 51));
+  border-radius: 10px;
+  transition: all 1s ease 0s;
+}
+
+.menu_1 {
+  font-weight: bold;
+  color: #d4d4d4;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 1.5s ease;
+}
+
+.menu:hover {
+    color: white;
+}
+
+li.cap_1 {
+  display: inline-block;
+  padding: 0% 1.25%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+li.cap_1:hover ul.menu_cap_2 {
+  visibility: visible;
+  top: 100%;
+} 
+
+ul.menu_cap_1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  list-style: none;
+}
+
+.nav-bar_1 {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.76);
+  z-index: 1;
+}
+
+li:nth-child(1):hover ~ span {
+  left: 0.25%;
+}
+
+li:nth-child(2):hover ~ span {
+  left: 8.75%;
+  width: 125px;
+}
+
+li:nth-child(3):hover ~ span {
+  left: 19.75%;
+  width: 130px;
+}
+
+li:nth-child(4):hover ~ span {
+  left: 31%;
+  width: 120px;
+}
+
+li:nth-child(5):hover ~ span {
+  left: 41%;
+  width: 115px;
+}
+
+li:nth-child(6):hover ~ span {
+  left: 50.75%;
+  width: 125px;
+}
+
 form {
-  position: relative; /* Định vị tương đối so với vị trí ban đầu */
-  top: 50%; /* Đặt ở giữa theo chiều dọc */
-  left: 50%; /* Đặt ở giữa theo chiều ngang */
-  transform: translate(-50%, -50%); /* Dịch chuyển form để nó nằm chính giữa */
-  transition: all 1s; /* Hiệu ứng chuyển đổi mượt mà cho tất cả các thuộc tính */
-  width: 50px; /* Chiều rộng ban đầu của form */
-  height: 50px; /* Chiều cao ban đầu của form */
-  background: white; /* Màu nền trắng */
-  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
-  border-radius: 25px; /* Bo tròn các góc */
-  border: 4px solid white; /* Viền trắng rộng 4px */
-  padding: 5px; /* Đệm bên trong form */
+  position: relative;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease 0s;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  background: white;
+  padding: 5px;
 }
 
-/* Áp dụng cho thẻ input bên trong form */
 input {
-  position: absolute; /* Định vị tuyệt đối so với thẻ form */
-  top: 0; /* Đặt ở đầu trên cùng của form */
-  left: 0; /* Đặt ở góc trái cùng của form */
-  width: 100%; /* Chiều rộng bằng với form */
-  height: 42.5px; /* Chiều cao cố định */
-  line-height: 30px; /* Chiều cao dòng cho văn bản */
-  outline: 0; /* Loại bỏ đường viền khi focus */
-  border: 0; /* Loại bỏ viền */
-  display: none; /* Ẩn input khi không hover */
-  font-size: 1em; /* Cỡ chữ chuẩn */
-  border-radius: 20px; /* Bo tròn các góc của input */
-  padding: 0 20px; /* Đệm bên trong input */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 35.5px;
+  line-height: 30px;
+  outline: 0px;
+  border: 0px;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0px 20px;
 }
 
-/* Áp dụng cho icon kính lúp */
 .fa-magnifying-glass {
-  box-sizing: border-box; /* Chiều rộng và chiều cao bao gồm cả padding và border */
-  padding: 10px; /* Đệm xung quanh icon */
-  width: 42.5px; /* Chiều rộng cố định của icon */
-  height: 42.5px; /* Chiều cao cố định của icon */
-  position: absolute; /* Định vị tuyệt đối so với thẻ form */
-  top: 0; /* Đặt ở đầu trên cùng của form */
-  right: 0; /* Đặt ở góc phải cùng của form */
-  border-radius: 50%; /* Làm tròn icon */
-  color: #8c52ff; /* Màu sắc của icon */
-  text-align: center; /* Căn giữa nội dung của icon */
-  font-size: 1.2em; /* Cỡ chữ lớn hơn cho icon */
-  transition: all 1s; /* Hiệu ứng chuyển đổi mượt mà cho icon */
+  box-sizing: border-box;
+  padding: 7px;
+  width: 34.5px;
+  height: 34.5px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 50%;
+  color: rgb(140, 82, 255);
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s ease 0s;
 }
 
-/* Khi hover vào form */
 form:hover {
-  width: 300px; /* Tăng chiều rộng của form */
-  cursor: pointer; /* Con trỏ chuột thay đổi thành hình bàn tay */
+  width: 300px;
+  cursor: pointer;
 }
 
-/* Khi hover vào form, hiển thị input */
 form:hover input {
-  display: block; /* Hiển thị input */
+  display: block;
 }
 
-/* Khi hover vào form, thay đổi màu sắc của icon */
 form:hover .fa-magnifying-glass {
-  background: #8c52ff; /* Màu nền của icon */
-  color: white; /* Màu sắc của icon */
+  background: rgb(140, 82, 255);
+  color: white;
+}
+
+li.cap_2\(3\) {
+  text-align: left;
+  line-height: 120%;
+  padding: 3% 0%;
+  margin: 2% 0%;
+}
+
+.khung_cap_2\(3\) {
+  width: auto;
+  height: auto;
+  margin-bottom: 5%;
+  margin-top: 4%;
+  margin-left: 15%;
+}
+
+li.cap_2\(2\) {text-align: left;line-height: 120%;padding: 3% 0%;margin: 2% 0%;}
+
+.khung_cap_2\(2\) {
+  width: auto;
+  height: auto;
+  margin-bottom: 5%;
+  margin-top: 4%;
+  margin-left: 15%;
+}
+
+li.cap_2\(1\) {
+  text-align: left;
+  line-height: 120%;
+  padding: 3% 0%;
+  margin: 2% 0%;
+}
+
+a.menu_2 {
+  font-weight: bold;
+  color: #d4d4d4;
+  letter-spacing: 1.5px;
+  position: relative;
+  text-decoration: none;
+}
+
+a.menu_2:hover {
+  color: white;
+}
+
+li.cap_2_title {
+  color: white;
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 15%;
+  text-align: left;
+}
+
+.khung_cap_2\(1\) {
+  width: auto;
+  height: auto;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  margin-top: 4%;
+}
+
+ul.menu_cap_2 {
+  position: absolute;
+  list-style: none;
+  left: 0%;
+  top: 100%;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+  background-color: #181818;
+  cursor: default;
+  visibility: hidden;
+  display: flex;
+}
+
+.nav-bar_2 {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    background-color: blue;
+  }
+
+  .nav-bar_1 {
+    display: none;
+  }
+
+  .khuyen_mai {
+    display: none;
+  }
+  
+  .nav-bar_2 {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: white;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+  }
+  
+  .menu {
+    display: flex;
+    width: auto;
+    position: relative;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .list {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+  }
+  
+  .list.active .icon {
+    transform: translateY(-32px);
+  }
+  
+  .link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #222327;
+  }
+  
+  .text {
+    position: absolute;
+    color: #222327;
+    font-weight: bold;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  
+  .list.active .text {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  
+  .indicator {
+    position: absolute;
+    top: -30%;
+    width: 50px;
+    height: 50px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid #222327;
+    transition: 0.5s;
+    left: 10px;
+  }
+  
+  .indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 #222327;
+  }
+  
+  .indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 #222327;
+  }
+  
+  i.fa-solid.fa-plus {
+    display: block !important;;
+    font-size: 100%;
+    transition: transform 0.75s ease;
+    margin-top: 35%;
+  }
+  
+  #plus {
+    cursor: pointer;
+  }
+  
+  .list.active i.fa-solid.fa-plus {
+    transform: rotate(45deg);
+  }
+  
+  .small_menu {
+    width: 0%;
+    height: 40px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 20px;
+    background-color: white;
+    visibility: hidden;
+    transition: 0.75s ease;
+    transform: translateY(-150%);
+    opacity: 0;
+    left: 50%;
+  }
+  
+  .hienra {
+    width: 300%;
+    height: 40px;
+    visibility: visible;
+    transform: translateY(-350%);
+    left: -100%;
+    opacity: 1;
+  }
+  
+  li.list:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+  }
+  li.list:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+  }
+  li.list:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+  }
+  li.list:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+  }
+  li.list:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+  }
+
+  .carousel {
+    margin-top: 0%;
+  }
+
+  .card {
+    width: 100%; /* Chiều rộng tối đa */
+    height: 37vh;
+    display: flex; /* Hiển thị linh hoạt */
+    gap: 15px; /* Khoảng cách giữa các phần tử con */
+    overflow: scroll; /* Cho phép cuộn nếu nội dung vượt quá kích thước */
+    position: relative; /* Vị trí tương đối so với vị trí ban đầu */
+    scroll-snap-type: x mandatory; /* Yêu cầu cuộn nắm bắt theo chiều ngang */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #222327;
+  }
+
+  .carousel {
+    margin-top: 0%;
+  }
+
+  .card {
+    width: 100%; /* Chiều rộng tối đa */
+    height: 31vh;
+    display: flex; /* Hiển thị linh hoạt */
+    gap: 5px; /* Khoảng cách giữa các phần tử con */
+    overflow: scroll; /* Cho phép cuộn nếu nội dung vượt quá kích thước */
+    position: relative; /* Vị trí tương đối so với vị trí ban đầu */
+    scroll-snap-type: x mandatory; /* Yêu cầu cuộn nắm bắt theo chiều ngang */
+  }
 }
