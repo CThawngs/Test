@@ -354,7 +354,7 @@ ul.menu_cap_2 {
     width: 100%;
     height: 50px;
     background: white;
-    bottom: 1%;
+    bottom: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -368,7 +368,7 @@ ul.menu_cap_2 {
     width: auto;
     position: relative;
     align-items: center;
-    padding: 0;
+    margin-bottom: 3%;
   }
   
   .list {
