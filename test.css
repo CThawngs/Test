@@ -791,11 +791,11 @@
       list-style: none;
       width: 70px;
       height: 70px;
-      z-index: 2;
+      z-index: 10;
     }
     
     .list.active .icon {
-      transform: translateY(-32px);
+      transform: translateY(-35px);
     }
     
     .link {
@@ -813,7 +813,7 @@
       position: relative;
       display: block;
       line-height: 75px;
-      font-size: 1.5em;
+      font-size: 100%;
       text-align: center;
       transition: 0.5s;
       color: #222327;
