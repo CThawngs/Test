@@ -82,4 +82,15 @@ document.addEventListener("DOMContentLoaded", function()
             });
         }
     }
+
+    let icon_search = document.querySelector(".fa-magnifying-glass");
+    let clear = document.querySelector(".clear");
+    icon_search.onclick = function()
+    {
+        document.querySelector(".khung_search").classList.toggle("active");
+    }
+    clear.onclick = function()
+    {
+        document.getElementById("search").value = "";
+    }
 }, false);
